@@ -22,7 +22,11 @@ logging.basicConfig(format='%(asctime)s %(message)s',
 
 def read_xbee():
     if not os.path.exists(xbee_dev):
-        logging.error('Serial device: %s does not exist' % (xbee_dev))
+        msg = 'Serial device: %s does not exist' % (xbee_dev)
+        logging.error(msg)
+        print(msg)
+        exit()
+
     xbee = serial.Serial(xbee_dev, baudrate)
 
     while True:
