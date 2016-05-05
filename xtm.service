@@ -1,0 +1,13 @@
+[Unit]
+Description=Route xbee messages to mqtt
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/etc/xbee_to_mqtt
+ExecStart=/usr/bin/python2 /etc/xbee_to_mqtt/main.py
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target
